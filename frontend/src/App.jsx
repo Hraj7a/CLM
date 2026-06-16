@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 
 const API_BASE_URL =
-  "https://clausecheck-git-main-hraj7as-projects.vercel.app";
+  "clm-contract-api-adabbbbvbqgndmdt.uaenorth-01.azurewebsites.net";
 
 function App() {
   const [file, setFile] = useState(null);
@@ -55,16 +55,16 @@ function App() {
     }
   }
 
- async function askQuestion() {
-      if (!analysis) {
-        setError("Analyze a contract before asking questions.");
-        return;
-      }
+  async function askQuestion() {
+    if (!analysis) {
+      setError("Analyze a contract before asking questions.");
+      return;
+    }
 
-      if (!question.trim()) {
-        setError("Please enter a question.");
-        return;
-      }
+    if (!question.trim()) {
+      setError("Please enter a question.");
+      return;
+    }
 
     setAsking(true);
     setError("");

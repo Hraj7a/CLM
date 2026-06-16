@@ -1,7 +1,5 @@
 fastapi
-uvicorn[standard]
-gunicorn
-python-multipart
-python-docx
+uvicorn
 python-dotenv
+python-docx
 openai
