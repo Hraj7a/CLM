@@ -34,7 +34,14 @@ function App() {
         body: formData,
       });
 
-      const data = await response.json();
+      const rawText = await response.text();
+
+      let data;
+      try {
+        data = JSON.parse(rawText);
+      } catch {
+        throw new Error(rawText.slice(0, 300));
+      }
 
       if (!response.ok) {
         throw new Error(data.detail || "Analysis failed.");
@@ -48,16 +55,16 @@ function App() {
     }
   }
 
-  async function askQuestion() {
-    if (!analysis) {
-      setError("Analyze a contract before asking questions.");
-      return;
-    }
+ async function askQuestion() {
+      if (!analysis) {
+        setError("Analyze a contract before asking questions.");
+        return;
+      }
 
-    if (!question.trim()) {
-      setError("Please enter a question.");
-      return;
-    }
+      if (!question.trim()) {
+        setError("Please enter a question.");
+        return;
+      }
 
     setAsking(true);
     setError("");
@@ -77,7 +84,14 @@ function App() {
         }),
       });
 
-      const data = await response.json();
+      const rawText = await response.text();
+
+      let data;
+      try {
+        data = JSON.parse(rawText);
+      } catch {
+        throw new Error(rawText.slice(0, 300));
+      }
 
       if (!response.ok) {
         throw new Error(data.detail || "Question answering failed.");
