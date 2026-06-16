@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 
 const API_BASE_URL =
-  "clm-contract-api-adabbbbvbqgndmdt.uaenorth-01.azurewebsites.net";
+  "https://clm-contract-api-adabbbbvbqgndmdt.uaenorth-01.azurewebsites.net";
 
 function App() {
   const [file, setFile] = useState(null);
