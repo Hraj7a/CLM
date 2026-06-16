@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 
 const API_BASE_URL =
-  "https://clausecheck-git-main-hraj7as-projects.vercel.app/";
+  "https://clausecheck-git-main-hraj7as-projects.vercel.app";
 
 function App() {
   const [file, setFile] = useState(null);
